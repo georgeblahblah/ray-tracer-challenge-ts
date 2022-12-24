@@ -20,7 +20,7 @@ jobs:
         run: npm install
       
       - name: Build
-        run: npm run build -- --base ray-tracer-challenge-ts
+        run: npm run build -- --base ray-tracer-challenge-ts/
 
       - name: Publish artifact
         uses: actions/upload-pages-artifact@v1
