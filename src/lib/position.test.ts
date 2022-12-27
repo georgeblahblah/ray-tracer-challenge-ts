@@ -5,12 +5,12 @@ import {
 	isVector,
 	makePoint,
 	makeVector,
-	Tuple,
+	Position,
 } from "./position";
 
 describe("tuples", () => {
 	test("a tuple with w=1.0 is a point", () => {
-		const a = new Tuple(4.3, -4.2, 3.1, Tuple.Point);
+		const a = new Position(4.3, -4.2, 3.1, Position.Point);
 		expect(a.x).toEqual(4.3);
 		expect(a.y).toEqual(-4.2);
 		expect(a.z).toEqual(3.1);
@@ -21,7 +21,7 @@ describe("tuples", () => {
 	});
 
 	test("a tuple with w=0.0 is a vector", () => {
-		const a = new Tuple(4.3, -4.2, 3.1, Tuple.Vector);
+		const a = new Position(4.3, -4.2, 3.1, Position.Vector);
 		expect(a.x).toEqual(4.3);
 		expect(a.y).toEqual(-4.2);
 		expect(a.z).toEqual(3.1);
@@ -31,20 +31,12 @@ describe("tuples", () => {
 		expect(isVector(a)).toBe(true);
 	});
 
-	test("makePoint() creates tuples with w = 1", () => {
-		expect(makePoint(4, -4, 3).equals(new Tuple(4, -4, 3, 1))).toBe(true);
+	test("makePoint() creates tuple with w = 1", () => {
+		expect(makePoint(4, -4, 3).equals(new Position(4, -4, 3, 1))).toBe(true);
 	});
 
 	test("makeVector() creates vectors with w = 0", () => {
-		expect(makeVector(4, -4, 3).equals(new Tuple(4, -4, 3, 0))).toBe(true);
-	});
-
-	test("adding two tuples", () => {
-		expect(
-			new Tuple(3, -2, 5, 1)
-				.add(new Tuple(-2, 3, 1, 0))
-				.equals(new Tuple(1, 1, 6, 1)),
-		);
+		expect(makeVector(4, -4, 3).equals(new Position(4, -4, 3, 0))).toBe(true);
 	});
 
 	test("subtracting two points", () => {
@@ -69,26 +61,6 @@ describe("tuples", () => {
 		const zero = makeVector(0, 0, 0);
 		const v = makeVector(1, -2, 3);
 		expect(zero.subtract(v).equals(makeVector(-1, 2, -3))).toBe(true);
-	});
-
-	test("negating a tuple", () => {
-		const a = new Tuple(1, -2, 3, -4);
-		expect(a.negate().equals(new Tuple(-1, 2, -3, 4))).toBe(true);
-	});
-
-	test("multiplying a tuple by a scalar", () => {
-		const a = new Tuple(1, -2, 3, -4);
-		expect(a.multiplyBy(3.5).equals(new Tuple(3.5, -7, 10.5, -14))).toBe(true);
-	});
-
-	test("multiplying a tuple by a fraction", () => {
-		const a = new Tuple(1, -2, 3, -4);
-		expect(a.multiplyBy(0.5).equals(new Tuple(0.5, -1, 1.5, -2))).toBe(true);
-	});
-
-	test("dividing a tuple by a scalar", () => {
-		const a = new Tuple(1, -2, 3, -4);
-		expect(a.divideBy(2).equals(new Tuple(0.5, -1, 1.5, -2))).toBe(true);
 	});
 
 	test("computing magnitude of vectors", () => {

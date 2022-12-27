@@ -1,12 +1,13 @@
-import { makePoint, makeVector, Tuple } from "./position";
+import { makePoint, makeVector, Position } from "./position";
+
 type Projectile = {
-	position: Tuple;
-	velocity: Tuple;
+	position: Position;
+	velocity: Position;
 };
 
 type Environment = {
-	gravity: Tuple;
-	wind: Tuple;
+	gravity: Position;
+	wind: Position;
 };
 
 const tick = (environment: Environment, projectile: Projectile): Projectile => {
