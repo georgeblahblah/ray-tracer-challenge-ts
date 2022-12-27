@@ -31,6 +31,13 @@ class Colour extends Tuple {
 		super.multiplyBy(by);
 		return this;
 	}
+
+	multiplyByColour(colour: Colour): Colour {
+		this._values = this._values.map(
+			(value, index) => value * colour.get(index),
+		);
+		return this;
+	}
 }
 
 export { Colour };

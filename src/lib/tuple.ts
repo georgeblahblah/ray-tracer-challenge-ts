@@ -1,8 +1,8 @@
 class Tuple {
-	#values: number[];
+	_values: number[];
 
 	constructor(...values: number[]) {
-		this.#values = values.slice();
+		this._values = values.slice();
 	}
 
 	/**
@@ -12,14 +12,14 @@ class Tuple {
 	 * @throws if `index` is out of bounds
 	 */
 	get(index: number): number {
-		if (index > this.#values.length) {
+		if (index > this._values.length) {
 			throw new Error(`Index ${index} out of bounds`);
 		}
-		return this.#values[index];
+		return this._values[index];
 	}
 
 	get length() {
-		return this.#values.length;
+		return this._values.length;
 	}
 
 	equals(b: Tuple): boolean {
@@ -28,7 +28,7 @@ class Tuple {
 		};
 		return (
 			this.length === b.length &&
-			this.#values.reduce(
+			this._values.reduce(
 				(acc, curr, index) => acc && floatEqual(curr, b.get(index)),
 				true,
 			)
@@ -39,7 +39,7 @@ class Tuple {
 		if (this.length !== b.length) {
 			throw new Error("Cannot add two tuples of different lengths");
 		}
-		this.#values = this.#values.map((value, index) => value + b.get(index));
+		this._values = this._values.map((value, index) => value + b.get(index));
 		return this;
 	}
 
@@ -47,17 +47,17 @@ class Tuple {
 		if (this.length !== b.length) {
 			throw new Error("Cannot subtract two tuples of different lengths");
 		}
-		this.#values = this.#values.map((value, index) => value - b.get(index));
+		this._values = this._values.map((value, index) => value - b.get(index));
 		return this;
 	}
 
 	negate(): Tuple {
-		this.#values = this.#values.map((value) => -value);
+		this._values = this._values.map((value) => -value);
 		return this;
 	}
 
 	multiplyBy(by: number): Tuple {
-		this.#values = this.#values.map((value) => value * by);
+		this._values = this._values.map((value) => value * by);
 		return this;
 	}
 
