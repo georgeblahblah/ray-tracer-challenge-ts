@@ -16,6 +16,21 @@ class Colour extends Tuple {
 	get blue() {
 		return this.get(2);
 	}
+
+	add(b: Colour): Colour {
+		super.add(b);
+		return this;
+	}
+
+	subtract(b: Colour): Colour {
+		super.subtract(b);
+		return this;
+	}
+
+	multiplyBy(by: number): Colour {
+		super.multiplyBy(by);
+		return this;
+	}
 }
 
 export { Colour };
