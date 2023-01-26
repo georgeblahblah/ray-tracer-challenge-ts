@@ -11,7 +11,8 @@
     "test": "vitest",
     "lint": "rome check src",
     "lint:fix": "rome format src --write",
-    "lint:ci": "rome ci src"
+    "lint:ci": "rome ci src",
+    "run-file": "ts-node-esm"
   },
   "devDependencies": {
     "rome": "^11.0.0",
