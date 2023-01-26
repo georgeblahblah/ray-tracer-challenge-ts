@@ -1,4 +1,4 @@
-import { makePoint, makeVector, Position } from "./position";
+import { makePoint, makeVector, Position } from "./position.js";
 
 type Projectile = {
 	position: Position;

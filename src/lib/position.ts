@@ -1,4 +1,4 @@
-import { Tuple } from "./tuple";
+import { Tuple } from "./tuple.js";
 
 class Position extends Tuple {
 	static Point: 1.0 = 1.0;
