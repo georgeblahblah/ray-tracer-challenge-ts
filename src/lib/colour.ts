@@ -1,4 +1,4 @@
-import { Tuple } from "./tuple";
+import { Tuple } from "./tuple.js";
 
 class Colour extends Tuple {
 	constructor(red: number, green: number, blue: number) {

@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { Colour } from "./colour";
+import { Colour } from "./colour.js";
 
 describe("colours", () => {
 	test("colours are red, green, blue tuples", () => {

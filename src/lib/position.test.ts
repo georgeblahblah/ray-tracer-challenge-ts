@@ -6,7 +6,7 @@ import {
 	makePoint,
 	makeVector,
 	Position,
-} from "./position";
+} from "./position.js";
 
 describe("tuples", () => {
 	test("a tuple with w=1.0 is a point", () => {

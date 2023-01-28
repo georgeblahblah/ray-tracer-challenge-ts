@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { Tuple } from "./tuple";
+import { Tuple } from "./tuple.js";
 
 describe("tuple", () => {
 	test("adding two tuples", () => {
