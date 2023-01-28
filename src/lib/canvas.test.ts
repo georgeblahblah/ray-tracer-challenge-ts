@@ -17,4 +17,11 @@ describe("canvas", () => {
 			}
 		}
 	});
+
+	test("writing pixels", () => {
+		const c = new Canvas(20, 10);
+		const red = new Colour(1, 0, 0);
+		c.setPixel(3, 2, red);
+		expect(c.getPixel(3, 2).equals(red)).toBe(true);
+	});
 });

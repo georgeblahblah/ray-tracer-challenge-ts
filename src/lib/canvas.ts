@@ -30,6 +30,10 @@ class Canvas {
 	getPixel(row: number, column: number): Colour {
 		return this.#pixels[row][column];
 	}
+
+	setPixel(row: number, column: number, colour: Colour) {
+		this.#pixels[row][column] = colour;
+	}
 }
 
 export { Canvas };
